@@ -31,8 +31,7 @@ for line in io.lines("./assets/emoji-ordering.txt") do
 		names = names.."twemoji-"..code.."="..name.."\n"
 	end
 end
--- print(ordering.."}")
--- print(names)
+ordering = ordering.."}"
 
 local orderingFile = io.open("./assets/emoji-ordering.lua", "w")
 if not orderingFile then error("Can't write processed order!") end
