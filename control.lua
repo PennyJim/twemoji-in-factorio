@@ -17,7 +17,7 @@ script.on_load(function ()
 		elseif not script.active_mods["better-chat"] and global["better-chat"] then
 			global["better-chat"] = nil
 		end
-		script.on_nth_tick() -- Unregister
+		script.on_nth_tick(5, nil) -- Unregister
 		shortcodes = nil -- unnecessary memory ussage
 	end)
 end)
