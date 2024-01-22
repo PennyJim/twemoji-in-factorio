@@ -1,3 +1,8 @@
 [submodule "twemoji"]
 	path = twemoji
 	url = https://github.com/jdecked/twemoji.git
+	# sparse_checkout = "assets/72x72" #All you need
+[submodule "emojibase"]
+	path = emojibase
+	url = https://github.com/milesj/emojibase.git
+	# sparse_checkout = "packages/data/en/shortcodes/*.raw.json"
