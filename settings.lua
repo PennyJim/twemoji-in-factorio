@@ -1,7 +1,7 @@
 data:extend{
 	{
 		type = "string-setting",
-		name = "shortcode-standard",
+		name = "twemoji-shortcode-standard",
 		setting_type = "runtime-global",
 		default_value = "joypixels",
 		allowed_values = {

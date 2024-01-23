@@ -12,7 +12,7 @@ local function register_shortcodes()
 	-- And mark it as unregistered if better-chat no longer exists
 	if script.active_mods["better-chat"] then
 		remote.call("emojipack registration", "add", script.mod_name, shortcodes[
-			settings.global["shortcode-standard"].value
+			settings.global["twemoji-shortcode-standard"].value
 		])
 	elseif not script.active_mods["better-chat"] then
 		shortcodes = nil
