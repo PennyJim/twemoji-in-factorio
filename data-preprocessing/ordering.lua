@@ -22,7 +22,7 @@ end
 --#region Process Emoji Ordering (with localization)
 --./assets/emoji-ordering.txt found at https://www.unicode.org/emoji/charts/emoji-ordering.txt
 -- Alternate found at https://unicode-org.github.io/emoji/emoji/charts-15.0/emoji-ordering.txt
-for line in io.lines("./assets/emoji-ordering.txt") do
+for line in io.lines("./data-preprocessing/emoji-ordering.txt") do
 	local code = split(line, ";")[1]:sub(1,-2):gsub("U%+",""):gsub(" ", "-"):lower()
 	if file_exists("./assets/twemoji-images/"..code..".png") then
 		local name = split(line, "#")[2]
