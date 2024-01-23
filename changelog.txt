@@ -1,10 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 2024-01-22
+  Major Features:
+    - Different shortcode standards
+  Bugfixes:
+    - Improved data preprocessing to include the missed emotes
+    - Manually added in emotes missing in file sourced from Unicode.org
+---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 2024-01-20
   Major Features:
     - Emojipack Functionality
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0
-Date: 01. 19. 2024
+Date: 2024-01-19
   Major Features:
     - Initial Release

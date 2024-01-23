@@ -5,7 +5,7 @@ The main purpose being as an Emojipack for [Better Chatting](https://mods.factor
 
 ## TODO
 - [x] Implement Emojipack
-- [ ] Offer other shortcode standards
+- [x] Offer other shortcode standards
 - [ ]	Offer intializing as SpritePrototypes instead of being virtual signal 
 
 ---
