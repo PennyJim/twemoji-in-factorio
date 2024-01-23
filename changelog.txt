@@ -4,8 +4,8 @@ Date: 2024-01-22
   Major Features:
     - Different shortcode standards
   Bugfixes:
-    - Improved data preprocessing to include the missed emotes
-    - Manually added in emotes missing in file sourced from Unicode.org
+    - Improved data preprocessing to include missed emotes (0️⃣-9️⃣)
+    - Manually added in emotes missing in file sourced from Unicode.org (🇦-🇿)
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 2024-01-20
