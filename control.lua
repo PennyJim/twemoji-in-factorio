@@ -31,5 +31,8 @@ script.on_load(function ()
 end)
 
 script.on_event(defines.events.on_runtime_mod_setting_changed ,function (change)
-	if change.setting == "shortcode-standard" then register_shortcodes() end
+	if change.setting == "shortcode-standard" then
+		global["better-chat"] = nil
+		register_shortcodes()
+	end
 end)

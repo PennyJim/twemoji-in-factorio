@@ -69,6 +69,7 @@ for line in io.lines("./data-preprocessing/emoji-ordering.txt") do
 		names = names.."twemoji-"..code.."="..name.."\n"
 	end
 end
+--#endregion
 
 --#region -- HACK: Lazily add the ones that don't work properly
 missing_codes = {
