@@ -30,6 +30,12 @@ function capitalizeWords(str)
 end
 
 --#region Process Emoji Ordering (with localization)
+
+local unregistered_emoji = {}
+for emoji in io.popen("ls -A1 ./assets/twemoji-images"):lines() do
+	unregistered_emoji[emoji:sub(1,-5)] = true
+end
+
 --./assets/emoji-ordering.txt found at https://www.unicode.org/emoji/charts/emoji-ordering.txt
 -- Alternate found at https://unicode-org.github.io/emoji/emoji/charts-15.0/emoji-ordering.txt
 for line in io.lines("./data-preprocessing/emoji-ordering.txt") do
@@ -51,6 +57,7 @@ for line in io.lines("./data-preprocessing/emoji-ordering.txt") do
 		local nameIndex = name:find(" ", 2)
 		name = capitalizeWords(name:sub(nameIndex+1))
 
+		-- Append code and localization
 		ordering = ordering.."'"..code.."',"
 		names = names.."twemoji-"..code.."="..name.."\n"
 	end
@@ -59,6 +66,8 @@ end
 --#region -- HACK: Lazily add the ones that don't work properly
 missing_codes = {
 	-- Missing in emoji-ordering.txt
+	{"a9", "Copyright Sign"},
+	{"ae", "Registered Sign"},
 	{"1f1e6", "Regional Indicator A"},
 	{"1f1e7", "Regional Indicator B"},
 	{"1f1e8", "Regional Indicator C"},
@@ -113,6 +122,14 @@ end
 --#endregion
 
 ordering = ordering.."}"
+
+--#region Print the codes that didn't get added
+local missingCodes = io.open("./data-preprocessing/missing-codes.txt", "w")
+if not missingCodes then error("Can't write missing codes!") end
+for code in pairs(unregistered_emoji) do
+	missingCodes:write(code.."\n")
+end
+missingCodes:close()
 
 local orderingFile = io.open("./assets/emoji-ordering.lua", "w")
 if not orderingFile then error("Can't write processed order!") end
