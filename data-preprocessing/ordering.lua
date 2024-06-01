@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 local ordering = "return {"
 local names = "[virtual-signal-name]\n"
 
