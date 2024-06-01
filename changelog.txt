@@ -1,9 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.1
-Date: ????
+Date: 2024-06-01
   Changes:
     - Fixed the copyright violations. I now include the licenses for each external file obtained
     - Updated Twemoji repository
+  Locale:
+    - Added Ukranian translation for system locale (crowdin). Does not affect Twemoji names
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 2024-01-22
