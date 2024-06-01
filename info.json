@@ -8,5 +8,19 @@
     "base >= 1.1",
     "?better-chat >= 0.1"
   ],
-  "description": "This mod adds in Twemoji as virtual signals"
+  "description": "This mod adds in Twemoji as virtual signals",
+  "package": {
+    "scripts": {
+      "prepackage": "bash ./data-preprocessing/prepackage.sh"
+    },
+    "ignore": [
+      "emojibase/**",
+      "twemoji/**",
+      "data-preprocessing/**",
+      "zipper.sh"
+    ],
+    "sync_portal_details": true,
+    "no_portal_upload": true,
+    "no_git_push": true
+  }
 }
