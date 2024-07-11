@@ -1,3 +1,4 @@
+---@type table<string,table<string,string>>
 local shortcodes = {
 	["cldr"] = require("assets.shortcodes.cldr"),
 	["emojibase"] = require("assets.shortcodes.emojibase"),
@@ -14,8 +15,6 @@ local function register_shortcodes()
 		remote.call("emojipack registration", "add", script.mod_name, shortcodes[
 			settings.global["twemoji-shortcode-standard"].value
 		])
-	elseif not script.active_mods["better-chat"] then
-		shortcodes = nil
 	end
 end
 
@@ -29,6 +28,7 @@ script.on_configuration_changed(function (change_data)
 	end
 end)
 
+---@param change EventData.on_runtime_mod_setting_changed
 script.on_event(defines.events.on_runtime_mod_setting_changed ,function (change)
 	if change.setting == "shortcode-standard" then
 		register_shortcodes()
